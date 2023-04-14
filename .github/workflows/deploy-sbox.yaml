@@ -1,19 +1,18 @@
 name: Deploy in Sandbox
-
-on:
+true:
   push:
-    branches: [sandbox]
-
+    branches:
+    - sandbox
 jobs:
   deploy:
     uses: stack-spot/stackspot-workflows/.github/workflows/runtimes-microservice-deploy.yaml@main
     with:
-      aws-account-id: "765614139936"
-      aws-ecr-repository-name: "myxablauapp3-ecr"
-      aws-region: "us-east-1"
-      environment: "Sandbox"
-      workspace-slug: "managed-runtime"
-      stkspot-enviroment: "sandbox"
-      runner: "stackspot-stacks-sandbox"
-      version: "${{ github.sha }}"
+      aws-account-id: '765614139936'
+      aws-ecr-repository-name: myxablauapp3-ecr
+      aws-region: us-east-1
+      environment: Sandbox
+      workspace-slug: managed-runtime
+      stkspot-enviroment: sandbox
+      runner: stackspot-stacks-sandbox
+      version: ${{ github.sha }}
     secrets: inherit
