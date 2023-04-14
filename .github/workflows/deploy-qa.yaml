@@ -1,0 +1,19 @@
+name: Deploy in QA
+
+on:
+  push:
+    branches: [qa]
+
+jobs:
+  deploy:
+    uses: stack-spot/stackspot-workflows/.github/workflows/runtime-v1-microservice-deploy.yaml@v1deploydemo
+    with:
+      aws-account-id: "218551854063"
+      aws-ecr-repository-name: "myxablauapp3-ecr"
+      aws-region: "us-east-1"
+      environment: "QA"
+      workspace-slug: "managed-runtime"
+      stkspot-enviroment: "qastaging"
+      runner: "stackspot-stacks-qa"
+      version: "${{ github.sha }}"
+    secrets: inherit

@@ -1,0 +1,19 @@
+name: Deploy in Production
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    uses: stack-spot/stackspot-workflows/.github/workflows/runtimes-microservice-deploy.yaml@main
+    with:
+      aws-account-id: "870332510631"
+      aws-ecr-repository-name: "myxablauapp3-ecr"
+      aws-region: "sa-east-1"
+      environment: "Production"
+      workspace-slug: "managed-runtime"
+      stkspot-enviroment: "production"
+      runner: "stackspot-stacks-prd"
+      version: "${{ github.ref_name }}"
+    secrets: inherit
