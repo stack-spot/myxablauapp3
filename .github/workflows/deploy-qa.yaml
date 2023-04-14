@@ -1,5 +1,5 @@
 name: Deploy in QA
-true:
+on:
   push:
     branches:
     - qa
