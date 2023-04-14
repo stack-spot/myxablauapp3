@@ -5,7 +5,7 @@ on:
     - qa
 jobs:
   deploy:
-    uses: stack-spot/stackspot-workflows/.github/workflows/runtime-v1-microservice-deploy.yaml@main
+    uses: stack-spot/stackspot-workflows/.github/workflows/runtime-v1-microservice-deploy.yaml@v1deploydemo
     with:
       aws-account-id: '218551854063'
       aws-ecr-repository-name: myxablauapp3-ecr
